@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="img/learning logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- navigation -->
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">Learning<span>Academy</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="#books" data-en="Books" data-ar="الكتب">Books</a></li>
+                <li><a href="#about" data-en="About" data-ar="من نحن">About</a></li>
+                <li><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+            </ul>
+
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ar">عربي</button>
+            </div>
+
+            <!-- cart and sign in icons -->
+            <div class="cart">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <div class="sign-in" id="sign-in-btn">
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Login/Signup Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <span class="close-auth">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login" data-en="Login" data-ar="تسجيل الدخول">Login</button>
+                <button class="auth-tab" data-tab="signup" data-en="Sign Up" data-ar="إنشاء حساب">Sign Up</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form class="auth-form active" id="login-form">
+                <h3 data-en="Welcome Back" data-ar="مرحباً بعودتك">Welcome Back</h3>
+                <input type="email" placeholder="Email" data-en="Email" data-ar="البريد الإلكتروني" required>
+                <input type="password" placeholder="Password" data-en="Password" data-ar="كلمة المرور" required>
+                <button type="submit" data-en="Login" data-ar="تسجيل الدخول">Login</button>
+                
+                <!-- Social Login -->
+                <div class="social-login">
+                    <p data-en="Or continue with" data-ar="أو продолжайте с">Or continue with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google-btn" id="google-login">
+                            <i class="fab fa-google"></i>
+                            <span data-en="Google" data-ar="جوجل">Google</span>
+                        </button>
+                        <button type="button" class="social-btn facebook-btn" id="facebook-login">
+                            <i class="fab fa-facebook-f"></i>
+                            <span data-en="Facebook" data-ar="فيسبوك">Facebook</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Signup Form -->
+            <form class="auth-form" id="signup-form">
+                <h3 data-en="Create Account" data-ar="إنشاء حساب جديد">Create Account</h3>
+                <input type="text" placeholder="Full Name" data-en="Full Name" data-ar="الاسم الكامل" required>
+                <input type="email" placeholder="Email" data-en="Email" data-ar="البريد الإلكتروني" required>
+                <input type="password" placeholder="Password" data-en="Password" data-ar="كلمة المرور" required>
+                <button type="submit" data-en="Sign Up" data-ar="إنشاء حساب">Sign Up</button>
+                
+                <!-- Social Login -->
+                <div class="social-login">
+                    <p data-en="Or continue with" data-ar="أو продолжайте с">Or continue with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google-btn" id="google-signup">
+                            <i class="fab fa-google"></i>
+                            <span data-en="Google" data-ar="جوجل">Google</span>
+                        </button>
+                        <button type="button" class="social-btn facebook-btn" id="facebook-signup">
+                            <i class="fab fa-facebook-f"></i>
+                            <span data-en="Facebook" data-ar="فيسبوك">Facebook</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Cart Popup -->
+    <div class="cart-popup" id="cart-popup">
+        <h3 data-en="Your Cart" data-ar="سلتك">Your Cart</h3>
+        <div id="popup-items"></div>
+        <p class="total"><span data-en="Total" data-ar="الإجمالي">Total</span>: <span id="total-price">0</span> EGP</p>
+        <button id="close-popup" data-en="Close" data-ar="إغلاق">Close</button>
+    </div>
+    
+                <!-- home section -->
+            <section class="home-section" id="home">
+            <div class="main-content">
+                <h1 data-en="Welcome to Learning Academy" data-ar="مرحباً بكم في أكاديمية التعلم">Welcome to Learning Academy</h1>
+                <h2 data-en="New Kids Books Collection" data-ar="مجموعة كتب الأطفال الجديدة">New Kids Books Collection</h2>
+                <p data-en="Discover a world of knowledge and fun with our new collection of kids books." data-ar="اكتشف عالم من المعرفة والمرح مع مجموعتنا الجديدة من كتب الأطفال.">Discover a world of knowledge and fun with our new collection of kids books.</p>
+                    <div class="btn">
+                        <a href="#books" class="btn-primary" data-en="Explore Now" data-ar="تصفح الآن">Explore Now</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ChildrenBooks2024" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/elearningacademy2023/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+            </div>
+            </section>
+
+            <!-- books section -->
+            <section class="books-section" id="books">
+                <h2 data-en="Books Collection" data-ar="مجموعة الكتب">Books Collection</h2>
+                <div class="books-container">
+                    <div class="book-card" data-book-id="1">
+                        <img src="img/ABC Pre KG.png" alt="Book 1">
+                        <h3>ABC <br>Pre KG</h3>
+                        <p>Coloring English letters</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="1">-</button>
+                            <span class="quantity" id="quantity-1">1</span>
+                            <button class="plus" data-book-id="1">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-en="Add to Cart" data-ar="إضافة للسلة" data-book-id="1">Add to Cart</button>
+                    </div>
+                    <div class="book-card" data-book-id="2">
+                        <img src="img/Arabic letters Pre KG.png" alt="Book 2">
+                        <h3>Arabic Letters <br>Pre KG</h3>
+                        <p>Coloring Arabic letters</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="2">-</button>
+                            <span class="quantity" id="quantity-2">1</span>
+                            <button class="plus" data-book-id="2">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="2">Add to Cart</button>
+                    </div>
+                    <div class="book-card" data-book-id="3">
+                        <img src="img/Arabic numbers.png" alt="Book 3">
+                        <h3>Arabic Numbers <br>Pre KG</h3>
+                        <p>numbers from 1 to 10</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="3">-</button>
+                            <span class="quantity" id="quantity-3">1</span>
+                            <button class="plus" data-book-id="3">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="3">Add to Cart</button>
+                    </div>
+                    <div class="book-card" data-book-id="4">
+                        <img src="img/English numbers.png" alt="Book 4">
+                        <h3>English Numbers <br>Pre KG</h3>
+                        <p>numbers from 1 to 10</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="4">-</button>
+                            <span class="quantity" id="quantity-4">1</span>
+                            <button class="plus" data-book-id="4">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="4">Add to Cart</button>
+                    </div>
+                    <div class="book-card" data-book-id="5">
+                        <img src="img/Arabic level one.png" alt="Book 5">
+                        <h3>Arabic Letters <br>Level one</h3>
+                        <p>discover arabic letters </p>
+                        <div class="count">
+                            <button class="minus" data-book-id="5">-</button>
+                            <span class="quantity" id="quantity-5">1</span>
+                            <button class="plus" data-book-id="5">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="5">Add to Cart</button>
+                    </div>
+                    <div class="book-card" data-book-id="6">
+                        <img src="img/english level one.png" alt="Book 6">
+                        <h3>English Letters <br>Level one</h3>
+                        <p>Learn English letters</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="6">-</button>
+                            <span class="quantity" id="quantity-6">1</span>
+                            <button class="plus" data-book-id="6">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="6">Add to Cart</button>
+                    </div>
+                    <div class="book-card" data-book-id="7">
+                        <img src="img/Adv Arabic pre.png" alt="Book 7">
+                        <h3>Arabic Letters <br>Advanced Pre KG</h3>
+                        <p>Advanced Arabic letters</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="7">-</button>
+                            <span class="quantity" id="quantity-7">1</span>
+                            <button class="plus" data-book-id="7">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="7">Add to Cart</button>
+                    </div>
+                    <div class="book-card" data-book-id="8">
+                        <img src="img/adv english pre.png" alt="Book 8">
+                        <h3>English Letters <br>Advanced Pre KG</h3>
+                        <p>Advanced English letters</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="8">-</button>
+                            <span class="quantity" id="quantity-8">1</span>
+                            <button class="plus" data-book-id="8">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="8">Add to Cart</button>
+                    </div>
+                    <div class="book-card" data-book-id="9">
+                        <img src="img/adv math pre.png" alt="Book 9">
+                        <h3>Math <br>Advanced Pre KG</h3>
+                        <p>Advanced math for kids</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="9">-</button>
+                            <span class="quantity" id="quantity-9">1</span>
+                            <button class="plus" data-book-id="9">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="9">Add to Cart</button>
+                    </div><div class="book-card" data-book-id="10">
+                        <img src="img/Arabic numbers pre.png" alt="Book 10">
+                        <h3>Arabic Numbers <br>Advanced Pre KG</h3>
+                        <p>Advanced Arabic numbers</p>
+                        <div class="count">
+                            <button class="minus" data-book-id="10">-</button>
+                            <span class="quantity" id="quantity-10">1</span>
+                            <button class="plus" data-book-id="10">+</button>
+                        </div>
+                        <p class="price">90 EGP</p>
+                        <button class="add-to-cart" data-book-id="10">Add to Cart</button>
+                    </div>
+                </div>
+                </section>
+                <section class="About" id="about">
+                    <div class="About-content">
+                        <h2 data-en="About Us" data-ar="من نحن">About Us</h2>
+                        <div class="about-cards">
+                            <div class="about-card">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h3 data-en="Our Mission" data-ar="رسالتنا">Our Mission</h3>
+                                <p data-en="To provide quality educational resources that help children learn and grow to their full potential." data-ar="توفير موارد تعليمية عالية الجودة تساعد الأطفال على التعلم والنمو لإمكانياتهم الكاملة.">To provide quality educational resources that help children learn and grow to their full potential.</p>
+                            </div>
+                            <div class="about-card">
+                                <i class="fas fa-users"></i>
+                                <h3 data-en="Our Team" data-ar="فريقنا">Our Team</h3>
+                                <p data-en="Expert educators committed to creating personalized, engaging, and effective learning experiences." data-ar="معلمون خبراء ملتزمون بإنشاء تجارب تعليمية شخصية وجذابة وفعالة.">Expert educators committed to creating personalized, engaging, and effective learning experiences.</p>
+                            </div>
+                            <div class="about-card">
+                                <i class="fas fa-book-open"></i>
+                                <h3 data-en="Our Resources" data-ar="مواردنا">Our Resources</h3>
+                                <p data-en="Wide range of books, videos, and interactive activities for children of all ages." data-ar="مجموعة واسعة من الكتب والفيديوهات والأنشطة التفاعلية للأطفال من جميع الأعمار.">Wide range of books, videos, and interactive activities for children of all ages.</p>
+                            </div>
+                            <div class="about-card">
+                                <i class="fas fa-heart"></i>
+                                <h3 data-en="Our Values" data-ar="قيمنا">Our Values</h3>
+                                <p data-en="Dedication to making learning fun, engaging, and accessible to every child." data-ar="الالتزام بجعل التعلم ممتعاً وجذاباً ومتاحاً لكل طفل.">Dedication to making learning fun, engaging, and accessible to every child.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="contact" id="contact">
+                    <div class="contact-content">
+                        <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
+                        <p data-en="Have any questions or feedback? Reach out to us!" data-ar="هل لديك أي أسئلة أو ملاحظات؟ تواصل معنا!">Have any questions or feedback? Reach out to us!</p>
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/201157345564" class="contact-button" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i><span data-en="Chat on WhatsApp" data-ar="دردشة على واتساب">Chat on WhatsApp</span>
+                            </a>
+                            <a href="tel:+201151666662" class="contact-button call-button">
+                                <i class="fas fa-phone"></i><span data-en="Call Us" data-ar="اتصل بنا">Call Us</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Learning<span>Academy</span></h3>
+                    <p data-en="Your trusted source for quality educational books for children." data-ar="مصدرك الموثوق لكتب الأطفال التعليمية عالية الجودة.">Your trusted source for quality educational books for children.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                        <li><a href="#books" data-en="Books" data-ar="الكتب">Books</a></li>
+                        <li><a href="#about" data-en="About" data-ar="من نحن">About</a></li>
+                        <li><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+                    <p><i class="fa-brands fa-whatsapp"></i> +20 11 57345564</p>
+                    <p><i class="fas fa-phone"></i> +20 11 51666662</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Learning Academy. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
+            </div>
+        </footer>
+    <script src="index.js"></script>
+</body>
+</html>
