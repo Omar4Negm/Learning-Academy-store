@@ -227,7 +227,18 @@ a {
 @media (max-width: 992px) {
     .navbar .container {
         padding: 10px 15px;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
+        justify-items: center;
+        font-size: 0.9rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-actions {
+        gap: 5px;
     }
     
     .nav-links {
@@ -275,8 +286,17 @@ a {
 }
 
 @media (max-width: 576px) {
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center
+        
+    }
     .logo {
         font-size: 1.2rem;
+    }
+    .nav-links {
+        position:
     }
     
     .navbar .container {
@@ -582,7 +602,9 @@ color:#C3110C;
     .navbar{
         display: flex;
         justify-content: space-around;
+        align-items: center;
         justify-items: center;
+        font-size: 0.9rem;
     }
     .nav-links {
         position: absolute;
