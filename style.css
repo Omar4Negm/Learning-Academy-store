@@ -219,6 +219,7 @@ a {
     cursor: pointer;
     font-size: 1.3rem;
     flex-shrink: 0;
+    color: var(--primary-color);
 }
 
 /* Mobile Responsive */
@@ -256,6 +257,7 @@ a {
     
     .navbar .burger {
         display: flex;
+        color: var(--primary-color);
     }
     
     .navbar-actions {
@@ -301,7 +303,9 @@ a {
     }
     
     .burger {
-        font-size: 1.1rem !important;
+        font-size: 1.2rem !important;
+        display: flex !important;
+        color: var(--primary-color) !important;
     }
 }
 
@@ -601,6 +605,7 @@ color:#C3110C;
     .navbar .burger {
         display: flex;
         z-index: 1000;
+        color: var(--primary-color);
     }
     
     .navbar .cart {
