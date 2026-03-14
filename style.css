@@ -226,21 +226,13 @@ a {
 /* Mobile Responsive */
 @media (max-width: 992px) {
     .navbar .container {
-        padding: 10px 15px;
         justify-content: space-around;
         align-items: center;
         justify-items: center;
         font-size: 0.9rem;
     }
     
-    .logo {
-        font-size: 1.2rem;
-    }
-    
-    .navbar-actions {
-        gap: 5px;
-    }
-    
+
     .nav-links {
         position: absolute;
         top: 55px;
@@ -273,8 +265,8 @@ a {
     }
     
     .lang-btn {
-        padding: 3px 6px;
-        font-size: 0.65rem;
+        padding: 1px 1px;
+        font-size: 0.5rem;
     }
     
     .navbar .cart,
@@ -289,23 +281,34 @@ a {
     .navbar {
         display: flex;
         justify-content: space-around;
-        align-items: center
+        align-items: center;
+        position: relative;
+        padding: 0 20px;
         
     }
     .logo {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
-    .nav-links {
-        position:
-    }
-    
     .navbar .container {
-        padding: 8px 10px;
         gap: 8px;
     }
     
     .lang-switcher {
         display: none;
+    }
+    .lang-btn{
+        position: relative;
+        padding: auto;
+        font-size: 0.7rem;
+        white-space: nowrap;
+        width: auto;
+        height: auto
+    }
+    .lang-btn.active{
+        position: relative;
+        padding: auto;
+        font-size: 0.7rem;
+        white-space: nowrap;
     }
     
     .navbar-actions {
@@ -314,8 +317,8 @@ a {
     
     .navbar .cart,
     .navbar .sign-in {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         font-size: 0.9rem;
     }
     
